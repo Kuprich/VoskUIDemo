@@ -10,7 +10,8 @@ from voskUtils.recasepunc import CasePuncPredictor, Config
 
 from transformers import TRANSFORMERS_CACHE
 
-MODEL_NAME = 'vosk-model-small-ru-0.22'
+# MODEL_NAME = 'vosk-model-small-ru-0.22'
+MODEL_NAME = 'vosk-model-ru-0.10'
 EXPORTED = 'src/exported'
 
 
@@ -54,14 +55,14 @@ def recognize(audio_path:str):
    rec.SetWords(False)
    rec.SetPartialWords(False)
 
+   result = []
    while True:
       data = wf.readframes(4000)
       if len(data) == 0:
          break
       if rec.AcceptWaveform(data):
-         _ = rec.Result()
-      else:
-         _ = rec.PartialResult()
+         result.append(json.loads(rec.Result())['text'])
       
-   result = json.loads(rec.FinalResult())
-   return result
+   result.append(json.loads(rec.FinalResult())['text'])
+   
+   return ' '.join(result)

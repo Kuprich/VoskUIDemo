@@ -3,10 +3,10 @@ from voskUtils.recasepunc import WordpieceTokenizer
 
 
 def start_app():
-    result = ut.recognize('src/audio.wav')
-    print('result without recasepunc: ' + result['text'])
+    result = ut.recognize('src/aud2.ogg')
+    print('result without recasepunc: ' + result)
     
-    recase_text = ut.recase_punc(result['text'])
+    recase_text = ut.recase_punc(result)
     print('\n\nresult with recasepunc: ' + recase_text)
     
 
