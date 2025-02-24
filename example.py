@@ -1,9 +1,9 @@
 import sys
 import time
 from transformers import logging
-from punc.recasepunc import CasePuncPredictor
-from punc.recasepunc import WordpieceTokenizer
-from punc.recasepunc import Config
+from punct.recasepunc import CasePuncPredictor
+from punct.recasepunc import WordpieceTokenizer
+from punct.recasepunc import Config
 
 from transformers import TRANSFORMERS_CACHE
 

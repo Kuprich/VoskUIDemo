@@ -1,9 +1,8 @@
 import sys
 import time
 from transformers import logging
-from punc.recasepunc import CasePuncPredictor
-from punc.recasepunc import WordpieceTokenizer
-from punc.recasepunc import Config
+
+from punct.recasepunc import CasePuncPredictor, WordpieceTokenizer, Config
 
 from transformers import TRANSFORMERS_CACHE
 
@@ -26,5 +25,3 @@ def recase_punc(text:str = 'этот теста веса пятьдесят ра
          results = results + prediction
 
    print (results.strip())
-   
-recase_punc()
