@@ -16,6 +16,8 @@ from torch.utils.data import TensorDataset, DataLoader
 
 from transformers import AutoModel, AutoTokenizer, BertTokenizer
 
+import pickle
+
 default_config = argparse.Namespace(
     seed=871253,
     lang='ru',
@@ -739,5 +741,3 @@ if __name__ == '__main__':
     config = Config(**parser.parse_args().__dict__)
 
     main(config, config.action, config.action_args)
-
-

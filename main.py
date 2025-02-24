@@ -1,4 +1,4 @@
-import punc
+from punc import recase_punc
 from pathlib import Path
 import wave
 import vosk
@@ -6,7 +6,9 @@ from pydub import AudioSegment
 
 from vosk import Model, KaldiRecognizer
 
+from punct.recasepunc import WordpieceTokenizer
 import json
+        
 
 vosk.MODEL_DIRS = ['src/voskModels']
 MODEL_NAME = 'vosk-model-small-ru-0.22'
@@ -48,5 +50,7 @@ def recognize(audio_path:str):
 # result_text = recognize(audio_path)['text']
 # print(result_text)
 
-punc.recase_punc('этот теста веса пятьдесят раз два три четыре пять как она будет слышно я пока не знаю но тестовая тв запись давай проверим числа один два три четыре пять тысяча девятьсот пятьдесят семь восемь тысяч пятьсот триста двадцать пять стоп')
+
+if __name__ == "__main__":
+    recase_punc('этот теста веса пятьдесят раз два три четыре пять как она будет слышно я пока не знаю но тестовая тв запись давай проверим числа один два три четыре пять тысяча девятьсот пятьдесят семь восемь тысяч пятьсот триста двадцать пять стоп')
 

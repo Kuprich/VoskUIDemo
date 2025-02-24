@@ -2,9 +2,10 @@ import sys
 import time
 from transformers import logging
 
-from punct.recasepunc import CasePuncPredictor, WordpieceTokenizer, Config
+from punct.recasepunc import CasePuncPredictor, Config
 
 from transformers import TRANSFORMERS_CACHE
+
 
 def recase_punc(text:str = 'этот теста веса пятьдесят раз два три четыре пять как она будет слышно я пока не знаю но тестовая тв запись давай проверим числа один два три четыре пять тысяча девятьсот пятьдесят семь восемь тысяч пятьсот триста двадцать пять стоп'):
 
